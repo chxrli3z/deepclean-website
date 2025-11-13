@@ -2,10 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>DeepClean - Jabón ecológico</title>
+    <title>DeepClean - Jabón para lavado de ropa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DeepClean es un jabón ecológico elaborado a partir de aceite de cocina reciclado. Limpieza profunda, cuidado de la piel y del planeta.">
+    <meta name="description" content="DeepClean es un jabón en barra ideal para el lavado de ropa y limpieza del hogar. Limpieza profunda, suave con las telas.">
     <style>
+        :root {
+            /* Paleta aproximada según la imagen que enviaste */
+            --bg-main: #0f3658;      /* azul más oscuro */
+            --bg-soft: #255b82;     /* azul intermedio */
+            --bg-card: #153e63;     /* fondo tarjetas */
+            --accent-1: #3f769d;    /* azul medio */
+            --accent-2: #55b5e9;    /* azul claro */
+            --bg-light: #e8f7ff;    /* azul muy clarito */
+            --text-main: #f9fafb;
+            --text-soft: #d1d5db;
+            --text-muted: #9ca3af;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -14,8 +27,8 @@
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #0f172a;
-            color: #e5e7eb;
+            background: radial-gradient(circle at top left, #255b82 0, var(--bg-main) 35%, #020b18 100%);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
@@ -32,22 +45,22 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(10, 34, 61, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #1f2937;
+            border-bottom: 1px solid rgba(37, 91, 130, 0.6);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         .logo-circle {
             width: 32px;
             height: 32px;
             border-radius: 999px;
-            background: radial-gradient(circle at 30% 30%, #22d3ee, #1d4ed8);
+            background: radial-gradient(circle at 30% 30%, var(--accent-2), var(--accent-1));
         }
 
         .logo-text {
@@ -65,7 +78,7 @@
         }
 
         nav a {
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         nav a:hover {
@@ -73,21 +86,21 @@
         }
 
         .btn-cta {
-            padding: 0.5rem 1rem;
+            padding: 0.55rem 1.25rem;
             border-radius: 999px;
             border: none;
             cursor: pointer;
             font-size: 0.9rem;
             font-weight: 600;
-            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
-            color: #020617;
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            color: #02223b;
+            box-shadow: 0 10px 25px rgba(85, 181, 233, 0.35);
             transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
 
         .btn-cta:hover {
             transform: translateY(-1px);
-            box-shadow: 0 20px 35px rgba(56, 189, 248, 0.45);
+            box-shadow: 0 20px 35px rgba(85, 181, 233, 0.45);
         }
 
         main {
@@ -110,12 +123,13 @@
             gap: 0.5rem;
             padding: 0.25rem 0.75rem;
             border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.6);
+            border: 1px solid rgba(198, 226, 245, 0.6);
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: #e5e7eb;
+            color: var(--text-main);
             margin-bottom: 1rem;
+            background: rgba(10, 46, 80, 0.8);
         }
 
         .hero-badge-dot {
@@ -131,15 +145,19 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, #22d3ee, #60a5fa);
+            background: linear-gradient(135deg, var(--accent-2), var(--accent-1));
             -webkit-background-clip: text;
             color: transparent;
         }
 
         .hero-subtitle {
             font-size: 1rem;
-            color: #9ca3af;
+            color: var(--text-muted);
             margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle strong {
+            color: var(--text-soft);
         }
 
         .hero-highlight {
@@ -153,8 +171,8 @@
             font-size: 0.8rem;
             padding: 0.35rem 0.9rem;
             border-radius: 999px;
-            background: rgba(15, 118, 110, 0.3);
-            border: 1px solid rgba(45, 212, 191, 0.4);
+            background: rgba(21, 62, 99, 0.9);
+            border: 1px solid rgba(190, 227, 248, 0.6);
         }
 
         .hero-cta {
@@ -167,7 +185,7 @@
 
         .hero-cta small {
             font-size: 0.8rem;
-            color: #9ca3af;
+            color: var(--text-muted);
         }
 
         .hero-meta {
@@ -175,7 +193,7 @@
             flex-wrap: wrap;
             gap: 1rem;
             font-size: 0.8rem;
-            color: #6b7280;
+            color: #a5b4c4;
         }
 
         .hero-meta span::before {
@@ -183,22 +201,22 @@
         }
 
         .hero-image-card {
-            background: radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.07), transparent 50%),
-                        radial-gradient(circle at 90% 100%, rgba(45, 212, 191, 0.07), transparent 55%),
-                        #020617;
+            background: radial-gradient(circle at 10% 0, rgba(85, 181, 233, 0.08), transparent 50%),
+                        radial-gradient(circle at 90% 100%, rgba(63, 118, 157, 0.08), transparent 55%),
+                        #082338;
             border-radius: 1.5rem;
-            border: 1px solid rgba(148, 163, 184, 0.4);
+            border: 1px solid rgba(110, 159, 196, 0.7);
             padding: 1.5rem;
-            box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
+            box-shadow: 0 25px 60px rgba(4, 12, 24, 0.9);
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
 
         .hero-image {
-            background: #0b1120;
+            background: radial-gradient(circle at top, #e8f7ff 0, #b6ddf2 40%, #3f769d 100%);
             border-radius: 1.25rem;
-            border: 1px solid rgba(148, 163, 184, 0.4);
+            border: 1px solid rgba(172, 208, 234, 0.9);
             height: 220px;
             display: flex;
             align-items: center;
@@ -207,45 +225,11 @@
             overflow: hidden;
         }
 
-        .hero-image::before {
-            content: "";
-            position: absolute;
-            inset: 15%;
-            border-radius: 999px;
-            border: 1px solid rgba(56, 189, 248, 0.5);
-            filter: blur(1px);
-        }
-
-        .soap-bottle {
-            width: 120px;
-            height: 190px;
-            border-radius: 28px;
-            background: linear-gradient(160deg, #22d3ee, #0ea5e9 40%, #020617 120%);
-            position: relative;
-            box-shadow: 0 20px 35px rgba(15, 23, 42, 0.9);
-        }
-
-        .soap-bottle::before {
-            content: "";
-            position: absolute;
-            top: -18px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 22px;
-            border-radius: 12px 12px 8px 8px;
-            background: #e5e7eb;
-        }
-
-        .soap-bottle::after {
-            content: "DeepClean";
-            position: absolute;
-            bottom: 18px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #0f172a;
+        .soap-photo {
+            max-height: 75%;
+            max-width: 75%;
+            border-radius: 24px;
+            box-shadow: 0 18px 35px rgba(10, 36, 61, 0.8);
         }
 
         .hero-image-tag {
@@ -253,15 +237,15 @@
             bottom: 16px;
             right: 18px;
             font-size: 0.65rem;
-            padding: 0.25rem 0.5rem;
+            padding: 0.25rem 0.6rem;
             border-radius: 999px;
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(148, 163, 184, 0.7);
+            background: rgba(7, 32, 55, 0.85);
+            border: 1px solid rgba(198, 226, 245, 0.9);
         }
 
         .hero-note {
             font-size: 0.8rem;
-            color: #9ca3af;
+            color: var(--text-soft);
         }
 
         .section {
@@ -275,7 +259,7 @@
 
         .section-subtitle {
             font-size: 0.9rem;
-            color: #9ca3af;
+            color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
 
@@ -293,10 +277,10 @@
         }
 
         .card {
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(11, 42, 73, 0.95);
             border-radius: 1rem;
             padding: 1.25rem;
-            border: 1px solid rgba(31, 41, 55, 0.9);
+            border: 1px solid rgba(40, 86, 124, 0.9);
         }
 
         .card h3 {
@@ -306,7 +290,7 @@
 
         .card p {
             font-size: 0.85rem;
-            color: #d1d5db;
+            color: var(--text-soft);
         }
 
         .pill {
@@ -315,15 +299,15 @@
             font-size: 0.75rem;
             padding: 0.2rem 0.6rem;
             border-radius: 999px;
-            background: rgba(15, 118, 110, 0.35);
-            border: 1px solid rgba(34, 197, 94, 0.5);
+            background: rgba(21, 62, 99, 0.9);
+            border: 1px solid rgba(190, 227, 248, 0.8);
             margin-bottom: 0.5rem;
         }
 
         .list-check {
             list-style: none;
             font-size: 0.85rem;
-            color: #e5e7eb;
+            color: var(--text-main);
         }
 
         .list-check li {
@@ -365,16 +349,16 @@
             font-size: 0.75rem;
             padding: 0.25rem 0.5rem;
             border-radius: 999px;
-            background: rgba(30, 64, 175, 0.5);
-            border: 1px solid rgba(96, 165, 250, 0.8);
+            background: rgba(37, 91, 130, 0.85);
+            border: 1px solid rgba(172, 208, 234, 0.9);
         }
 
         footer {
             margin-top: 3rem;
             padding: 1.5rem 0 0.5rem;
             font-size: 0.75rem;
-            color: #6b7280;
-            border-top: 1px solid #1f2937;
+            color: #a5b4c4;
+            border-top: 1px solid rgba(37, 91, 130, 0.9);
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -415,7 +399,7 @@
             }
 
             .hero-image {
-                height: 200px;
+                height: 220px;
             }
         }
     </style>
@@ -445,41 +429,44 @@
         <div>
             <div class="hero-badge">
                 <span class="hero-badge-dot"></span>
-                Jabón ecológico hecho con aceite reciclado
+                Jabón en barra para lavado de ropa
             </div>
             <h1>
                 Limpieza profunda,<br>
                 <span>impacto positivo</span>.
             </h1>
             <p class="hero-subtitle">
-                DeepClean es un jabón artesanal elaborado a partir de aceite de cocina reciclado. 
-                Diseñado para cuidar tu piel, tu hogar y el medio ambiente al mismo tiempo.
+                DeepClean es un jabón en barra pensado principalmente para el
+                <strong>lavado de ropa</strong>: elimina manchas de grasa y suciedad del día a día,
+                cuidando las telas y dejando una sensación de frescura. También puede usarse en
+                superficies y utensilios del hogar.
             </p>
             <div class="hero-highlight">
-                <span>♻ Reutiliza aceite de cocina usado</span>
-                <span>🌱 Fórmula biodegradable</span>
-                <span>🧼 Ideal para manos y limpieza del hogar</span>
+                <span>Especial para lavado de ropa</span>
+                <span>Ayuda con manchas de grasa y suciedad</span>
+                <span>También apto para uso general en el hogar</span>
             </div>
             <div class="hero-cta">
                 <button class="btn-cta" onclick="document.getElementById('producto').scrollIntoView({behavior:'smooth'})">
                     Ver detalles del producto
                 </button>
-                <small>No contiene aceite de palma ni fragancias agresivas.</small>
+                <small>Ideal para lavado a mano o prelavado antes de la lavadora.</small>
             </div>
             <div class="hero-meta">
-                <span>Hecho en pequeños lotes artesanales</span>
-                <span>Producción responsable y local</span>
+                <span>Formato en barra de alta duración</span>
+                <span>Enfoque en el cuidado de las telas</span>
             </div>
         </div>
 
         <div class="hero-image-card">
             <div class="hero-image">
-                <div class="soap-bottle"></div>
-                <div class="hero-image-tag">Lote #DC-01 · 120 g aprox.</div>
+                <!-- Imagen real del jabón -->
+                <img src="jabondeepclean.png" alt="Jabón DeepClean" class="soap-photo">
+                <div class="hero-image-tag">DeepClean · Barra para ropa</div>
             </div>
             <p class="hero-note">
-                Imagen ilustrativa del concepto de empaque de DeepClean.
-                Puedes reemplazarla por una foto real de tu producto cuando la tengas lista.
+                Imagen de referencia del jabón DeepClean. Ideal para mostrar el producto en empaques,
+                redes sociales y material promocional.
             </p>
         </div>
     </section>
@@ -488,36 +475,36 @@
     <section class="section" id="producto">
         <h2 class="section-title">Sobre el producto</h2>
         <p class="section-subtitle">
-            DeepClean transforma un residuo problemático (aceite de cocina usado) en un jabón útil, práctico y alineado
-            con un estilo de vida más consciente.
+            DeepClean está pensado para convertirse en tu aliado de confianza en el
+            <strong>lavado de ropa</strong>: desde prendas del día a día hasta ropa de trabajo,
+            deporte o uniformes. También funciona como jabón multiuso para el hogar.
         </p>
 
         <div class="grid grid-3">
             <div class="card">
-                <div class="pill">Ingredientes base</div>
-                <h3>Lo que lleva</h3>
-                <p>
-                    • Aceite de cocina reciclado previamente filtrado.<br>
-                    • Solución alcalina controlada para la saponificación.<br>
-                    • Aditivos suaves (como esencias y colorantes aptos para jabón).*<br><br>
-                    <small>*Ajusta esta sección con tus ingredientes reales.</small>
-                </p>
+                <div class="pill">Enfoque principal</div>
+                <h3>Lavado de ropa</h3>
+                <ul class="list-check">
+                    <li>Ideal para prelavar cuellos, puños y zonas con mayor suciedad.</li>
+                    <li>Funciona muy bien en ropa de uso diario y prendas delicadas.</li>
+                    <li>Complementa el uso de detergente líquido o en polvo.</li>
+                </ul>
             </div>
             <div class="card">
-                <div class="pill">Uso recomendado</div>
-                <h3>¿Para qué sirve?</h3>
+                <div class="pill">Uso secundario</div>
+                <h3>Superficies y hogar</h3>
                 <ul class="list-check">
-                    <li>Limpieza de manos luego de cocinar o manipular alimentos grasos.</li>
-                    <li>Limpieza de platos, utensilios y superficies grasosas.</li>
-                    <li>Uso en áreas del hogar donde se requiera desengrasar.</li>
+                    <li>Puedes usarlo en superficies donde haya grasa ligera.</li>
+                    <li>Aplica en utensilios de cocina y paños de limpieza.</li>
+                    <li>Perfecto para tenerlo cerca del lavadero o lavaplatos.</li>
                 </ul>
             </div>
             <div class="card">
                 <div class="pill">Presentación</div>
-                <h3>Formato actual</h3>
+                <h3>Formato en barra</h3>
                 <p>
-                    Pastilla de jabón de aproximadamente 120–150 g, con empaque minimalista
-                    y mensaje educativo sobre el reciclaje del aceite de cocina.
+                    Barra de jabón de aproximadamente 120–150 g. Su diseño facilita el agarre
+                    durante el lavado de ropa a mano y el pretratamiento de manchas.
                 </p>
             </div>
         </div>
@@ -525,26 +512,26 @@
 
     <!-- BENEFICIOS -->
     <section class="section" id="beneficios">
-        <h2 class="section-title">Beneficios de elegir DeepClean</h2>
+        <h2 class="section-title">Beneficios de usar DeepClean en tu lavado</h2>
         <p class="section-subtitle">
-            Más que un jabón, es una forma sencilla de participar en la economía circular y reducir la contaminación por aceite usado.
+            Diseñado para que tu rutina de lavado sea más efectiva, práctica y agradable.
         </p>
 
         <div class="grid grid-2">
             <div class="card">
-                <h3>Para ti</h3>
+                <h3>Para tu ropa</h3>
                 <ul class="list-check">
-                    <li>Ayuda a remover grasa de manera efectiva.</li>
-                    <li>Evita que el aceite usado termine en el lavaplatos.</li>
-                    <li>Te permite apoyar proyectos locales y sostenibles.</li>
+                    <li>Ayuda a aflojar manchas difíciles antes de meter la ropa a la lavadora.</li>
+                    <li>Práctico para lavar a mano prendas delicadas o pequeñas.</li>
+                    <li>Textura cómoda que facilita el frote directo sobre la tela.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Para el planeta</h3>
+                <h3>Para tu rutina</h3>
                 <ul class="list-check">
-                    <li>Reduce la contaminación del agua por vertimiento de aceite.</li>
-                    <li>Apuesta por la reutilización antes de desechar.</li>
-                    <li>Promueve hábitos responsables en casa y en la cocina.</li>
+                    <li>Complementa el detergente que ya usas en casa.</li>
+                    <li>Te da una solución rápida para emergencias de manchas.</li>
+                    <li>Un solo producto que también puedes usar en el resto del hogar.</li>
                 </ul>
             </div>
         </div>
@@ -552,28 +539,31 @@
 
     <!-- CÓMO USAR -->
     <section class="section" id="uso">
-        <h2 class="section-title">Cómo usar DeepClean</h2>
+        <h2 class="section-title">Cómo usar DeepClean para el lavado de ropa</h2>
         <p class="section-subtitle">
-            Instrucciones simples para aprovechar el jabón al máximo y alargar su vida útil.
+            Algunos pasos recomendados para sacarle el máximo provecho a la barra.
         </p>
 
         <div class="grid grid-3">
             <div class="card">
-                <h3>1. Humedece</h3>
+                <h3>1. Humedece la prenda</h3>
                 <p>
-                    Moja tus manos, esponja o fibra de limpieza con agua. Frota la pastilla de DeepClean hasta formar espuma.
+                    Moja con agua la zona de la ropa que quieras tratar (manchas en cuellos, puños,
+                    axilas, rodillas, etc.).
                 </p>
             </div>
             <div class="card">
-                <h3>2. Limpia</h3>
+                <h3>2. Frota con DeepClean</h3>
                 <p>
-                    Aplica la espuma directamente sobre la suciedad o grasa que quieras remover. Enjuaga con agua limpia.
+                    Frota directamente la barra sobre la tela hasta formar buena espuma.
+                    Deja actuar unos minutos y luego enjuaga o continúa con el lavado normal.
                 </p>
             </div>
             <div class="card">
-                <h3>3. Cuida el jabón</h3>
+                <h3>3. Cuida la barra</h3>
                 <p>
-                    Coloca la pastilla en una jabonera con buen drenaje. Así evitarás que se derrita y te durará más tiempo.
+                    Coloca el jabón en una jabonera con buen drenaje. Así evitas que se deshaga
+                    rápido y te durará por más lavadas.
                 </p>
             </div>
         </div>
@@ -583,24 +573,24 @@
     <section class="section" id="contacto">
         <h2 class="section-title">¿Quieres probar DeepClean o recibir más información?</h2>
         <p class="section-subtitle">
-            Escríbeme para pedidos pequeños, muestras, colaboraciones o para saber más sobre el proceso de reciclaje del aceite.
+            Escríbeme para conocer más sobre el producto, disponibilidad, precios o opciones para tu hogar
+            o emprendimiento de lavandería.
         </p>
 
         <div class="contact card">
             <div>
                 <strong>Contacto</strong>
                 <div class="contact-info">
-                    <!-- Cambia estos datos por los tuyos -->
-                    <span>WhatsApp: <a href="https://wa.me/573000000000" target="_blank">+57 300 000 00 00</a></span>
-                    <span>Correo: <a href="mailto:deepclean@ejemplo.com">deepclean@ejemplo.com</a></span>
+                    <span>WhatsApp: <a href="https://wa.me/573017879886" target="_blank">+57 301 787 9886</a></span>
+                    <span>Correo: <a href="mailto:deepclean@gmail.com">deepclean@gmail.com</a></span>
                     <span>Instagram: <a href="https://instagram.com/deepclean" target="_blank">@deepclean</a></span>
                 </div>
             </div>
             <div>
-                <div class="contact-tag">Sostenibilidad · Reutilización · Limpieza consciente</div>
-                <p style="margin-top:0.5rem;font-size:0.8rem;color:#9ca3af;">
-                    Si llegaste aquí desde un código QR, ¡gracias por escanearlo! 
-                    Cada barra de DeepClean es un paso más hacia un mejor manejo del aceite de cocina.
+                <div class="contact-tag">Lavado de ropa · Hogar · Limpieza práctica</div>
+                <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-muted);">
+                    Si llegaste aquí desde un código QR, gracias por interesarte en DeepClean.
+                    Este jabón en barra está pensado para acompañarte en cada lavado.
                 </p>
             </div>
         </div>
@@ -608,12 +598,11 @@
 
     <footer>
         <span>© <span id="year"></span> DeepClean. Todos los derechos reservados.</span>
-        <span>Producto elaborado con aceite de cocina reciclado de manera responsable.</span>
+        <span>Jabón en barra pensado para el lavado de ropa y el cuidado del hogar.</span>
     </footer>
 </main>
 
 <script>
-    // Año automático en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
